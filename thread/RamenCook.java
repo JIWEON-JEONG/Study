@@ -1,7 +1,5 @@
 package thread;
 
-import java.util.Random;
-
 public class RamenCook implements Runnable{
 
     private int ramenCount; //몇개의 라면을 끓일지

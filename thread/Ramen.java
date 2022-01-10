@@ -1,7 +1,7 @@
 package thread;
 
 public class Ramen {
-    public static void main(String[] args) {
+    public static void play(String[] args) {
         try{
             RamenCook ramenCook = new RamenCook(10);
             new Thread(ramenCook,"A").start();
