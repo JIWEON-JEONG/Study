@@ -12,7 +12,7 @@ public abstract class Pizza {
     //Builder 자신의 하위 타입을 상속 받는다.
     abstract static class Builder<T extends Builder<T>>{
         EnumSet<Topping> builderToppings = EnumSet.noneOf(Topping.class); //처음은 비어있다.
-        //빌더 내부에서 제공하는 기능
+        //빌더 내부 함수
         public T addTopping(Topping topping){
             builderToppings.add(Objects.requireNonNull(topping));
             return self();
