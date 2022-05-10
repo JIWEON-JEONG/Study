@@ -5,12 +5,12 @@ import java.util.Stack;
 
 public class BaseBall {
 
-    public static void main(String[] args) {
-        int baseball[][] = {{123, 1, 1}, {356, 1, 0}, {327, 2, 0}, {489, 0, 1}};
-        BaseBall T = new BaseBall();
-        int solution = T.solution(baseball);
-        System.out.println(solution);
-    }
+//    public static void main(String[] args) {
+//        int baseball[][] = {{123, 1, 1}, {356, 1, 0}, {327, 2, 0}, {489, 0, 1}};
+//        BaseBall T = new BaseBall();
+//        int solution = T.solution(baseball);
+//        System.out.println(solution);
+//    }
 
     //가능한 답의 개수 리턴
     //baseball [n][세자리의수, 스트라이크 수 , 볼의 수]
