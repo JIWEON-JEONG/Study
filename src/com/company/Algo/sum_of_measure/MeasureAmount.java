@@ -4,13 +4,13 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class MeasureAmount {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int result = Solution.solution(n);
-
-        System.out.println(result);
-    }
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        int result = Solution.solution(n);
+//
+//        System.out.println(result);
+//    }
 
     static class Solution {
         public static int solution(int n) {
