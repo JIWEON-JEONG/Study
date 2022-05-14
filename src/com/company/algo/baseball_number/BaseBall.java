@@ -1,4 +1,4 @@
-package com.company.Algo.baseball_number;
+package com.company.algo.baseball_number;
 
 import java.util.ArrayList;
 import java.util.Stack;

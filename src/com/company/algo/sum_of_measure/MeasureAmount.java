@@ -1,7 +1,4 @@
-package com.company.Algo.sum_of_measure;
-
-import java.util.Scanner;
-import java.util.Vector;
+package com.company.algo.sum_of_measure;
 
 public class MeasureAmount {
 //    public static void main(String[] args) {
