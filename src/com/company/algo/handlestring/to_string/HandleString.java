@@ -2,10 +2,6 @@ package com.company.algo.handlestring.to_string;
 
 public class HandleString {
 
-    public static void main(String[] args) {
-
-    }
-
     class Solution {
         public String solution(int n) {
             String answer = "";
