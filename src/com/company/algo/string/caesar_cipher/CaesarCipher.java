@@ -1,4 +1,4 @@
-package com.company.algo.caesar_cipher;
+package com.company.algo.string.caesar_cipher;
 
 import java.util.Scanner;
 

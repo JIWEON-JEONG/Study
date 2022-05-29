@@ -1,4 +1,4 @@
-package com.company.algo.handlestring.to_string;
+package com.company.algo.string.to_string;
 
 public class HandleString {
 

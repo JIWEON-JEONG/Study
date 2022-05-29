@@ -1,4 +1,4 @@
-package com.company.algo.find_kim;
+package com.company.algo.string.find_kim;
 
 import java.util.Arrays;
 
