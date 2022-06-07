@@ -52,7 +52,7 @@ public class EX1 {
         }
 
         //stream 사용
-        numbers.stream().
+//        numbers.stream().
     }
 
 
