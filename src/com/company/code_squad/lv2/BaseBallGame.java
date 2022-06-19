@@ -1,10 +1,7 @@
 package com.company.code_squad.lv2;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class BaseBallGame {
 
@@ -13,25 +10,24 @@ public class BaseBallGame {
         BaseBallGame game = new BaseBallGame();
         Answer answerObj = new Answer(game.answerInit().toCharArray());
 
-        System.out.println(answerObj.answer);
-
         while(true) {
             System.out.println("값 입력 : >> ");
             char[] number = (scanner.nextLine()).toCharArray();
             game.handleInputException(number);
-
-            answerObj.calcStrike(number);
-            answerObj.calcBall(number);
-            if (answerObj.verifyAnswer()) {
-                return;
-            }else {
-                answerObj.print();
-                answerObj.init();
-            }
+            game.calcBallAndStrike(answerObj,number);
+            if (answerObj.verifyAnswer()){ return;}
+            game.retry(answerObj);
         }
+    }
 
+    public void calcBallAndStrike(Answer answer,char[] number){
+        answer.calcStrike(number);
+        answer.calcBall(number);
+    }
 
-
+    public void retry(Answer answer){
+        answer.print();
+        answer.init();
     }
 
     public String answerInit() {
@@ -61,16 +57,9 @@ class Answer {
     char[]  answer;
     int strike;
     int ball;
-    Set<Character> ansSet = new HashSet<>();
 
     public Answer(char[] answer) {
         this.answer = answer;
-        for (char ans : answer) {
-            ansSet.add(ans);
-        }
-        for (Character character : ansSet) {
-            System.out.println(character);
-        }
     }
 
     public void calcStrike(char[] number) {
@@ -82,18 +71,16 @@ class Answer {
     }
 
     public void calcBall(char[] number) {
-        Set<Character> numSet = new HashSet<>();
-
-        for (int i = 0; i < number.length; i++) {
-            for (Character num : number) {
-                numSet.add(num);
+        ArrayList<Character> list = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {list.add(answer[i]);}
+        for (int i = 0; i < 3; i++) {
+            if(list.contains(number[i])){
+                Character value = number[i];
+                list.remove(value);
+                ball++;
             }
         }
-        for (Character num : numSet) {
-            if (ansSet.contains(num)) ball++;
-        }
-        //ball 처리 로직 수정 : ball strike 둘다 커질 수 있기 때문에
-        ball = ((strike - ball) < 0) ? ball - strike : 0;
+        ball = ball - strike;
     }
 
     public void init() {
@@ -109,7 +96,7 @@ class Answer {
         } else return false;
     }
     public void print() {
-        if (strike == 0 || ball == 0) {
+        if (strike == 0 && ball == 0) {
             System.out.println("0 스트라이크 , 0 볼");
         } else if (strike == 0) {
             System.out.println(ball + " 볼");
