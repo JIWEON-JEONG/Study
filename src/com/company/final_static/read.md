@@ -33,4 +33,4 @@ final
 번외 
 private static 메서드가 필요한 이유 
 
-: 
+protected, default 이런 접근제어자는 언제 사용할까?
