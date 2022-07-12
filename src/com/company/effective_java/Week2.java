@@ -18,10 +18,13 @@ package com.company.effective_java;
  * @Builder.Default : 따로 매개변수 저장 안하면 , 0,null, false 같은걸로 초기화 되는데
  * 이 어노테이션을 활용하면 Default 값으로 초기화 할 수 있다.
  *
+ * @Builder.Default int count = 0;
+ *
  * @Singular : 컬렉션 타입 필드가 있을 때 add , clear 해주는 메서드 제공
  * ex) List<Places> places 있으면
  * .place("독서실")
  * .place("우리집")
+ * .clearPlaces()
  * 등으로 활용 가능
  */
 public class Week2 {

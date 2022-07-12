@@ -32,7 +32,7 @@ public class ExParent {
         System.out.println("extends method");
     }
 
-    public void doSomething() {
+    public static void doSomething() {
         // 청소를 한다.
         // 여자친구와 데이트를 한다.
         // 강아지 산책 시킨다.
@@ -45,12 +45,12 @@ public class ExParent {
         // 코딩을 한다.
         // 강아지 산책 시킨다.
         // 밥을 먹는다.
-        //도현이와 구미를 한다.
+        // 도현이와 구미를 한다.
         // 잔다.
         doSomethingEveryday();
     }
 
-    private void doSomethingEveryday() {
+    private static void doSomethingEveryday() {
         // 강아지 산책 시킨다.
         // 밥을 먹는다.
         // 잔다.
@@ -70,6 +70,7 @@ final class ExChild extends ExParent {
 
     void extendsMethod2() {
         super.iv = 3;
+        print();
         staticPrint();
     }
 
