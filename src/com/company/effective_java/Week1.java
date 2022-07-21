@@ -20,6 +20,7 @@ public class Week1 {
 
     String address;
 
+
     private static final Week1 GoodNight = new Week1();
 
     public Week1() {

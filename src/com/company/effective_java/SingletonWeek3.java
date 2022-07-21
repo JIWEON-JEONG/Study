@@ -12,7 +12,7 @@ import java.util.function.Supplier;
  * 단점 : 클라이언트 코드를 테스트 하는게 어렵다.
  * (싱글톤이 인터페이스를 구현해서 만든 싱글턴이 아니라면, 싱글턴 인스턴스를 mock 구현으로 대체 할 수 없기 때문에) -> 잘 이해 X
  *
- * 싱글톤으로 만드는 2가지 방법
+ * 싱글톤으로 만드는 3가지 방법
  * 1. final 필드를 이용한 방법 - static 팩토리 메서드를 이용하는 방법보다 명확하고 간단하다.
  * 2. static 팩토리 메서드를 이용한 방법
  * 3. enum class 로 관리 (가장 이상적)
@@ -33,11 +33,12 @@ public class SingletonWeek3 {
     public static final SingletonWeek3 instance = new SingletonWeek3();
 
 //    static int count = 0;
-    int count;
+    static int count;
+//    int count;
 //    int count = 0;
 
     private SingletonWeek3() {
-        System.out.println("!!!!!!!!!");
+        System.out.println(count);
 //        count++;
 //        if (count != 1) {
 //            throw new IllegalStateException("this object should be singleton");
@@ -49,7 +50,7 @@ public class SingletonWeek3 {
  * 장점
  * 1. 싱글턴이 아니게 바꾸어도 외부에서 코드 변경 하지 않아도 된다. (유연성)
  * 2. 원한다면 정적 팩터리를 제네릭 싱글턴 팩터리로 만들수 있다.
- * 3.정적 팩터리의 메서드 참조를 공급자 (supplier) 로 사용 할 수 있다.
+ * 3. 정적 팩터리의 메서드 참조를 공급자 (supplier) 로 사용 할 수 있다.
  *
  * 이러한 장점들이 필요하지 않다면 public 필드 방식이 좋다.
  *
@@ -76,6 +77,7 @@ class SingletonByStaticFactory {
 enum SingletonByEnum {
     INSTANCE;
 
+    String name = "";
     public String getName() {
         return "Jiweon";
     }

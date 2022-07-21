@@ -1,7 +1,7 @@
 package com.company.thread;
 
 public class Ramen {
-    public static void play(String[] args) {
+    public static void main(String[] args) {
         try{
             RamenCook ramenCook = new RamenCook(10);
             new Thread(ramenCook,"A").start();

@@ -12,10 +12,10 @@ public class RamenCook implements Runnable{
     @Override
     public void run() {
         while (ramenCount > 0) {
-            synchronized (this) {
+//            synchronized (this) {
                 ramenCount--;
                 System.out.println("thread name , ramenCount = " + ramenCount + " , " + Thread.currentThread().getName());
-            }
+//            }
 
 
             for (int i = 0; i < burnersState.length; i++) {
